@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  
+  <title>Cadastrar Denúncia</title>
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/AdminLTE.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/_all-skins.min.css')}}">
+
+</head>
+
+<body class="hold-transition login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="/"><b>Avalia</b>UnB</a>
+    </div>
+
+    <div class="login-box-body">
+      <p class="login-box-msg">Cadastrar Denúncia</p>
+      <form action="/denuncias/cadastrar/{{ avaliacao[2] }}" method="post">
+        <div class="form-group">
+          <label for="estudante_id">Estudante</label>
+          <input type="text" class="form-control" id="estudante_id" name="estudante_id" value="{{estudante[0]}}" placeholder="ID do Estudante">
+          {{ estudante[1] }}
+        </div>
+        <div class="form-group">
+          <label for="avaliacao_id">Avaliação</label>
+          <input type="text" class="form-control" id="avaliacao_id" name="avaliacao_id" value="{{avaliacao[0]}}" placeholder="ID da Avaliação">
+          {{ avaliacao[2] }}
+        </div>
+        <div class="form-group">
+          <label for="denuncia">Denúncia</label>
+          <textarea class="form-control" id="denuncia" name="denuncia" rows="3" placeholder="Denúncia"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/jquery-2.2.3.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/app.min.js')}}"></script>
+
+</body>
+</html>

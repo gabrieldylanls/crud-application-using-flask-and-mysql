@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  
+  <title>Editar Avaliação</title>
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/AdminLTE.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/_all-skins.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dataTables.bootstrap.css')}}">
+
+</head>
+
+<body class="hold-transition login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="/"><b>Avalia</b>UnB</a>
+    </div>
+
+    <div class="login-box-body">
+      <p class="login-box-msg">Editar Avaliação</p>
+      <form action="/avaliacoes/atualizar/{{ data[0][0] }}" method="POST">
+        <div class="form-group has-feedback">
+          <label for="estudante_id">ID do Estudante:</label>
+          <input name="estudante_id" type="text" class="form-control" placeholder="ID do Estudante" value="{{ data[0][1] }}" required>
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <label for="turma_id">ID da Turma:</label>
+          <input name="turma_id" type="text" class="form-control" placeholder="ID da Turma" value="{{ data[0][2] }}" required>
+          <span class="glyphicon glyphicon-education form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <label for="avaliacao">Avaliação:</label>
+          <input name="avaliacao" type="text" class="form-control" placeholder="Avaliação" value="{{ data[0][3] }}" required>
+          <span class="glyphicon glyphicon-thumbs-up form-control-feedback"></span>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Atualizar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/jquery-2.2.3.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/app.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/dataTables.bootstrap.min.js')}}"></script>
+
+</body>
+</html>

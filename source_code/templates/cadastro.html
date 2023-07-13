@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  
+  <title>Cadastro de Estudante</title>
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/AdminLTE.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/_all-skins.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dataTables.bootstrap.css')}}">
+
+</head>
+
+<body class="hold-transition login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="/"><b>Avalia</b>UnB</a>
+    </div>
+
+    <div class="login-box-body">
+      <p class="login-box-msg">Preencha o formulário para se cadastrar</p>
+
+      <form action="/cadastro" method="POST" enctype="multipart/form-data">
+        <div class="form-group has-feedback">
+          <input name="nome" type="text" class="form-control" placeholder="Nome" required>
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <input name="email" type="email" class="form-control" placeholder="Email" required>
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <input name="matricula" type="text" class="form-control" placeholder="Matrícula" required>
+          <span class="glyphicon glyphicon-credit-card form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <input name="curso" type="text" class="form-control" placeholder="Curso" required>
+          <span class="glyphicon glyphicon-education form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <input name="senha" type="password" class="form-control" placeholder="Senha" required>
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="form-group">
+          <label for="foto_perfil">Foto de Perfil:</label>
+          <input type="file" name="foto_perfil" id="foto_perfil" required>
+        </div>
+        <div class="form-group">
+          <label for="administrador">Administrador:</label>
+          <input type="checkbox" name="administrador" id="administrador">
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Cadastrar</button>
+          </div>
+        </div>
+      </form>
+
+      <a href="/login">Já tem uma conta? Faça login</a><br>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/jquery-2.2.3.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/app.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/dataTables.bootstrap.min.js')}}"></script>
+
+</body>
+</html>
